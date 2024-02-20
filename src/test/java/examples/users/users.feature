@@ -3,6 +3,35 @@ Feature: sample karate test script
 
   Background:
     * url 'https://jsonplaceholder.typicode.com'
+  Scenario: Get data
+    * url "https://postman-rest-api-learner.glitch.me"
+    Given path '/info'
+    And param Fid = 1
+    When method GET
+    Then status 200
+  Scenario: Post data
+    * def base_url = "https://postman-rest-api-learner.glitch.me"
+    * url base_url
+    Given path '/info'
+    When method post
+    Then status 200
+  Scenario: Update data
+    * url "https://postman-rest-api-learner.glitch.me"
+    Given path '/info'
+    And param Fid = 1
+    When method PUT
+    Then status 200
+  Scenario: Delete data
+    * url "https://postman-rest-api-learner.glitch.me"
+    Given path '/info'
+    And param Fid = 1
+    When method DELETE
+    Then status 200
+  Scenario: YT
+    * url 'https://www.youtube.com/watch?v=mKHIGIdFgBw'
+    When method GET
+    Then status 200
+    And match response contains "Chittiveri"
 
   Scenario: get all users and then get the first user by id
     Given path 'users'

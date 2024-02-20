@@ -1,0 +1,4 @@
+org\example\DataModel.class
+org\example\FeatureFileGeneratorWithFreeMarker.class
+org\example\ScenarioData.class
+org\example\JsonToFeatureConverter.class
